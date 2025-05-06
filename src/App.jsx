@@ -36,12 +36,13 @@ function App(){
   };
 return (
   <>
-  <Plants plants={PLANTS} addCarts={addCarts} />
+  <h1>Proper Plants</h1>
   <Cart
   cart={cart}
   addCarts={addCarts}
   removeCarts={removeCarts}
   />
+  <Plants plants={PLANTS} addCarts={addCarts} />
   </>
 );
 }
