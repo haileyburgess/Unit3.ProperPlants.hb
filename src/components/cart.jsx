@@ -1,14 +1,17 @@
 function Cart({ cart, addCarts, removeCarts }) {
   return (
-    <>
+    <div className="Cart">
       <h2>Cart</h2>
       {cart.length === 0 ? (
         <p>No plants in cart</p>
       ) : (
-        <>
+        <ul>
           {cart.map((cart) => {
             return (
-              <div key={cart.id}>
+              <li key={cart.id} name={cart.name}>
+                <span>
+             {cart.name}: {cart.quantity}
+                </span>{" "}
                 <button
                   onClick={() => {
                     removeCarts(cart);
@@ -17,21 +20,18 @@ function Cart({ cart, addCarts, removeCarts }) {
                 >
                   -
                 </button>{" "}
-                <span>
-                  {cart.plantName}: {cart.quantity}Number in Cart
-                </span>{" "}
                 <button
                   onClick={() => addCarts(cart)}
                   style={{ color: "darkgreen" }}
                 >
                   +
                 </button>
-              </div>
+              </li>
             );
           })}
-        </>
+        </ul>
       )}
-    </>
+    </div>
   );
 }
 export default Cart;

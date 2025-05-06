@@ -19,7 +19,7 @@ function App(){
       )
       );
     } else {
-      const item = {...plant, quantity: 0 };
+      const item = {...plant, quantity: 1 };
       setCart([...cart,item]);
     }
   };
