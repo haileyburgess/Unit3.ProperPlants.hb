@@ -1,4 +1,5 @@
 import { useState } from "react";
+import "./index.css";
 import Plants from "./components/plants";
 import Cart from "./components/cart";
 import PLANTS from "./data";
@@ -12,7 +13,7 @@ function App(){
     if (cartExists) {
       setCart(
         cart.map((cart) =>
-          cart,id === plant.id
+          cart.id === plant.id
         ? {...cart, quantity: cart.quantity + 1 }
         : cart 
       )
@@ -30,7 +31,7 @@ function App(){
       ? {...cart, quantity: cart.quantity - 1 }
       : cart
     )
-    .filter((cart) => cart,quantity > 0)
+    .filter((cart) => cart.quantity > 0)
   );
   };
 return (
